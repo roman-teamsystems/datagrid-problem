@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import {DataGrid} from "@mui/x-data-grid";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const columns = [
+    {
+        field: "start",
+        headerName: "Start",
+        flex: 1, 
+        
+    },
+    {
+        field: "name",
+        headerName: "Name",
+  
+    },
+   
+];
+
+
+return (
+
+                <DataGrid
+                    autoHeight
+                    rows={[]}
+                    columns={columns}
+                    initialState={{
+                        pagination: {paginationModel: {pageSize: 100}}
+                    }}
+                    disableRowSelectionOnClick
+                />
+ 
+
+);
+
+
 }
 
 export default App;
